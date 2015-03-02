@@ -2,8 +2,10 @@ package com.phillipe.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import java.util.Calendar;
+import java.util.List;
 
 import static javax.persistence.TemporalType.DATE;
 
@@ -16,6 +18,8 @@ public class Carro  extends Id {
     private String marca;
     @Temporal(DATE)
     private Calendar ano;
+    @ManyToMany(mappedBy = "carros")
+    private List<Motorista> motoristas;
 
     public String getModelo() {
         return modelo;
