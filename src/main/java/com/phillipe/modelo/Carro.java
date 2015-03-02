@@ -21,6 +21,16 @@ public class Carro  extends Id {
     @ManyToMany(mappedBy = "carros")
     private List<Motorista> motoristas;
 
+    public Carro() {
+    }
+
+    public Carro(String modelo, String marca, Calendar ano, List<Motorista> motoristas) {
+        this.modelo = modelo;
+        this.marca = marca;
+        this.ano = ano;
+        this.motoristas = motoristas;
+    }
+
     public String getModelo() {
         return modelo;
     }
@@ -43,5 +53,13 @@ public class Carro  extends Id {
 
     public void setAno(Calendar ano) {
         this.ano = ano;
+    }
+
+    public List<Motorista> getMotoristas() {
+        return motoristas;
+    }
+
+    public void setMotoristas(List<Motorista> motoristas) {
+        this.motoristas = motoristas;
     }
 }

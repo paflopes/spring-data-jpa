@@ -15,6 +15,15 @@ public class Motorista extends Id {
     @ManyToMany
     private List<Carro> carros;
 
+    public Motorista() {
+    }
+
+    public Motorista(String cpf, String nome, List<Carro> carros) {
+        this.cpf = cpf;
+        this.nome = nome;
+        this.carros = carros;
+    }
+
     public String getCpf() {
         return cpf;
     }
