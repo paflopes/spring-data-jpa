@@ -9,35 +9,63 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <!-- Versões das bibliotecas utilizadas -->
+        <spring.version>4.1.5.RELEASE</spring.version>
+        <spring.data.version>1.7.2.RELEASE</spring.data.version>
+        <hibernate.orm.version>4.3.8.Final</hibernate.orm.version>
+        <postgres.driver.version>9.1-901.jdbc4</postgres.driver.version>
+        <junit.version>4.12</junit.version>
+
+        <!-- Configuração da codificação do projeto -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <dependencies>
+        <!-- Base do spring framework -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>4.1.5.RELEASE</version>
+            <version>${spring.version}</version>
         </dependency>
+
+        <!-- Persistência -->
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-            <version>1.7.2.RELEASE</version>
+            <version>${spring.data.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.3.8.Final</version>
+            <version>${hibernate.orm.version}</version>
         </dependency>
+
+        <!-- Driver do PostgreSQL -->
         <dependency>
             <groupId>postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>9.1-901.jdbc4</version>
+            <version>${postgres.driver.version}</version>
+        </dependency>
+
+        <!-- Dependências de teste -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Configuração da compilação -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

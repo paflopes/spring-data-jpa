@@ -1,8 +1,6 @@
 package com.phillipe.modelo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -12,7 +10,7 @@ public class Motorista extends Id {
     private String cpf;
     @Column
     private String nome;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Carro> carros;
 
     public Motorista() {

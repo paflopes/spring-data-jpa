@@ -1,9 +1,6 @@
 package com.phillipe.modelo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.Temporal;
+import javax.persistence.*;
 import java.util.Calendar;
 import java.util.List;
 
@@ -18,7 +15,7 @@ public class Carro  extends Id {
     private String marca;
     @Temporal(DATE)
     private Calendar ano;
-    @ManyToMany(mappedBy = "carros")
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "carros", cascade = CascadeType.ALL)
     private List<Motorista> motoristas;
 
     public Carro() {

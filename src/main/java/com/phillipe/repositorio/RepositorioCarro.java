@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RepositorioCarro extends JpaRepository<Carro, Long> {
 
+    public Carro findByModelo(String modelo);
 }
