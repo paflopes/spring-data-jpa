@@ -1,4 +1,4 @@
-package com.phillipe.model;
+package com.phillipe.modelo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

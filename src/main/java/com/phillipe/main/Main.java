@@ -1,8 +1,8 @@
 package com.phillipe.main;
 
 import com.phillipe.Config;
-import com.phillipe.RepositorioCarro;
-import com.phillipe.model.Carro;
+import com.phillipe.repositorio.RepositorioCarro;
+import com.phillipe.modelo.Carro;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

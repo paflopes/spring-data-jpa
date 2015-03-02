@@ -1,6 +1,6 @@
-package com.phillipe;
+package com.phillipe.repositorio;
 
-import com.phillipe.model.Carro;
+import com.phillipe.modelo.Carro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
