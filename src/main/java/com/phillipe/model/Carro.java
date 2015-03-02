@@ -1,31 +1,21 @@
 package com.phillipe.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Temporal;
 import java.util.Calendar;
 
 import static javax.persistence.TemporalType.DATE;
 
 @Entity
-public class Carro {
+public class Carro  extends Id {
 
-    @Id
-    @Column
-    @GeneratedValue
-    private Long id;
     @Column
     private String modelo;
     @Column
     private String marca;
     @Temporal(DATE)
     private Calendar ano;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getModelo() {
         return modelo;
