@@ -36,9 +36,13 @@ public class Hibernate {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         Map<String, String> properties = new HashMap<>();
 
+        // Configuração do dialeto a ser utilizado pelo Hibernate.
         properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQL82Dialect");
+        // A opção "update" cria um schema no banco de dados se não houver um.
         properties.put("hibernate.hbm2ddl.auto", "update");
 
+        // Pacote base para procurar classes anotadas com @Entity
+        // Substitui o arquivo beans.xml
         emf.setPackagesToScan("com.phillipe");
         emf.setDataSource(dataSource);
         emf.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
@@ -49,6 +53,7 @@ public class Hibernate {
     @Bean
     @Autowired
     public JpaTransactionManager transactionManager(EntityManagerFactory managerFactory) {
+        // Cria um gerenciador de transações. Executa as transações de forma automática.
         return new JpaTransactionManager(managerFactory);
     }
 }
