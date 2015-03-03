@@ -11,6 +11,7 @@ import java.util.Calendar;
 public class Main {
 
     public static void main(String[] args) {
+    	// Acessa o contexto do Spring Framework a partir de um método estático.
         ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
         RepositorioCarro repositorio = context.getBean(RepositorioCarro.class);
         Carro carro = new Carro();
