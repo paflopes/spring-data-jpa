@@ -20,8 +20,11 @@ public class Hibernate {
     public DataSource dataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
+        // Conecta no servidor "localhost" e no banco de dados "carros"
         dataSource.setUrl("jdbc:postgresql://localhost:5432/carros");
+        // Usando o usuário "usuario"
         dataSource.setUsername("usuario");
+        // E a senha "senha"
         dataSource.setPassword("senha");
 
         return dataSource;
