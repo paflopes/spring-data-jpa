@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @Configuration
 // Procura por componentes a partir desse pacote.
 @ComponentScan(basePackages = "com.phillipe")
+// Ativa o Spring Data JPA
 @EnableJpaRepositories
 public class Config {
 
